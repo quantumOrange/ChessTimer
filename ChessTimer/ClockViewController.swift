@@ -164,6 +164,7 @@ class ClockViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateTriangles(animated: false)
+        updateClockTimeLables()
     }
     
     override var shouldAutorotate:Bool {
@@ -217,17 +218,20 @@ class ClockViewController: UIViewController {
         whiteClockFaceView.clockFace = createClockFace(fraction:0.0, in: whiteClockFaceView.bounds)
         blackClockFaceView.clockFace = createClockFace(fraction:0.0, in: blackClockFaceView.bounds)
     }
-    
+    func updateClockTimeLables() {
+        whiteTimeLable.text = timeString(player: gameTimer.whitePlayer)
+        blackTimeLable.text = timeString(player: gameTimer.blackPlayer)
+    }
     
     func updateClockViews() {
+        
+        updateClockTimeLables()
         
         whiteClockFaceView.isActive = gameTimer.whiteIsActive
         blackClockFaceView.isActive = gameTimer.blackIsActive
         
-        whiteTimeLable.text = timeString(player: gameTimer.whitePlayer)
+       
         whiteClockFaceView.clockFace = createClockFace(timer: gameTimer.whitePlayer, in: whiteClockFaceView.bounds)
-        
-        blackTimeLable.text = timeString(player: gameTimer.blackPlayer)
         blackClockFaceView.clockFace = createClockFace(timer: gameTimer.blackPlayer, in: blackClockFaceView.bounds)
         
     }
