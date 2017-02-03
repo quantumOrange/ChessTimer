@@ -8,9 +8,6 @@
 
 import UIKit
 
-
-
-
 class TimerPickerViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource{
     @IBOutlet weak var whitePicker: UIPickerView!
     @IBOutlet weak var blackPicker: UIPickerView!
@@ -23,7 +20,6 @@ class TimerPickerViewController: UIViewController,UIPickerViewDelegate,UIPickerV
                ttvc.performSegue(withIdentifier:"clockVCSegue", sender:self.game)
             })
         }
-        
     }
     
     @IBAction func cancel(_ sender: Any) {

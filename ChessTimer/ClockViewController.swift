@@ -126,7 +126,7 @@ class ClockViewController: UIViewController {
     
     
     func gameOverAlert() {
-        
+        print("Game over alert")
         playChime()
         let alert = UIAlertController(title: "Game Over", message: "\(gameTimer.winner) won by timeout", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { action in
@@ -251,6 +251,7 @@ class ClockViewController: UIViewController {
         let angle = twoPi*fraction
         return ClockFace(center:rect.center, radius: 0.5*rect.width, angle:angle)
     }
+    
     //MARK: -  Sound
     var soundID:SystemSoundID = 0
     
@@ -269,9 +270,5 @@ class ClockViewController: UIViewController {
     func playChime() {
         playSound(name:"chime_bell_ding")
     }
-    
-    
-    
-
 }
 

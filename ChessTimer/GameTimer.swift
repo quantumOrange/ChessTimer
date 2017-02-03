@@ -55,11 +55,13 @@ class GameTimer:Equatable {
     init(time:TimeInterval){
         whitePlayer = PlayerTimer(time:time,player:.white)
         blackPlayer = PlayerTimer(time:time,player:.black)
+         setup()
     }
     
     init(game:Game) {
         whitePlayer = PlayerTimer(time:TimeInterval(game.white)*minute,player:.white)
         blackPlayer = PlayerTimer(time:TimeInterval(game.black)*minute,player:.black)
+         setup()
     }
     
     func setup() {
