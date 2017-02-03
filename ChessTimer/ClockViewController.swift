@@ -23,7 +23,22 @@ class ClockViewController: UIViewController {
     @IBOutlet weak var blackPlayerTriangle: TrianglePointerView!
     
     @IBAction func pause(_ sender: Any) {
-        gameTimer.pause()
+        if gameTimer.isPaused {
+            puaseButtons.forEach({$0.titleLabel?.text = "Pause"})
+            gameTimer.unpause()
+        }
+        else {
+            puaseButtons.forEach({$0.titleLabel?.text = "Start"})
+            if gameTimer.activePlayer == .none {
+                //game hasn't started - start!
+            }
+            else {
+                //Game is on - pause!
+                gameTimer.pause()
+            }
+            
+        }
+        
     }
    
     @IBAction func cancel(_ sender: Any) {
@@ -49,6 +64,7 @@ class ClockViewController: UIViewController {
     }
     
     func start() {
+        puaseButtons.forEach({$0.titleLabel?.text = "Pause"})
         startClockAnimation()
     }
     

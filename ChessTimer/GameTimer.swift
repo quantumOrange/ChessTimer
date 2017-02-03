@@ -70,12 +70,12 @@ class GameTimer:Equatable {
     
     @objc func whiteOutOfTime() {
         winner = .black
-        self.pause()
+        self.stop()
     }
     
     @objc func blackOutOfTime() {
         winner = .white
-        self.pause()
+        self.stop()
     }
     
     let whitePlayer:PlayerTimer
@@ -115,9 +115,30 @@ class GameTimer:Equatable {
         }
     }
     
-    func pause() {
+    func stop() {
         whitePlayer.pause()
         blackPlayer.pause()
+        activePlayer = .none
+    }
+    
+    var isPaused =  false
+    
+    func pause() {
+        isPaused = true
+        whitePlayer.pause()
+        blackPlayer.pause()
+    }
+    
+    func unpause() {
+        isPaused = false
+        switch activePlayer {
+        case .white:
+            whitePlayer.start()
+        case .black:
+            blackPlayer.start()
+        case .none:
+            start()
+        }
     }
     
     func reset() {
