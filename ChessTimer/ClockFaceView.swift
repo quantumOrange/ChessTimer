@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable class ClockFaceView: UIView {
     var clockFace:ClockFace = ClockFace(center:CGPoint(),radius:0.0,angle:0.0) {
         didSet {
-            print("set clockFace \(clockFace)")
+            
             clockFace.faceColor = faceColor
             setNeedsDisplay()
         }
@@ -32,7 +32,6 @@ import UIKit
     clockFace.timeColor = isActive ? UIColor(hue: hue, saturation: 0.5, brightness: brightness, alpha: 1.0) : UIColor(hue: hue, saturation: 0.25, brightness: brightness, alpha: 1.0)
         
         if let context = UIGraphicsGetCurrentContext() {
-            clockFace.draw(renderer: TestRenderer())
             clockFace.draw(renderer: context)
         }
     }

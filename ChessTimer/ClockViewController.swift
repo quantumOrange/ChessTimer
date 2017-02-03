@@ -126,7 +126,7 @@ class ClockViewController: UIViewController {
     
     
     func gameOverAlert() {
-        //print("Time out")
+        
         playChime()
         let alert = UIAlertController(title: "Game Over", message: "\(gameTimer.winner) won by timeout", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { action in
@@ -200,14 +200,14 @@ class ClockViewController: UIViewController {
         let duration = 0.5
         let increment = clockAnimationTimeInterval/duration
         clockAnimationProgress += CGFloat(increment)
-        print("clockFace at \(clockAnimationProgress)")
+       
         whiteClockFaceView.clockFace = createClockFace(fraction:clockAnimationProgress, in: whiteClockFaceView.bounds)
         blackClockFaceView.clockFace = createClockFace(fraction:clockAnimationProgress, in: blackClockFaceView.bounds)
         
         if clockAnimationProgress >= 1.0 {
             animateClockTimer?.invalidate()
             animateClockTimer = nil
-            print("start")
+           
             gameTimer.start()
             updateTriangles(animated: true)
         }
