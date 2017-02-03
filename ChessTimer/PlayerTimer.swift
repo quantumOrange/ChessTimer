@@ -43,7 +43,6 @@ class PlayerTimer: Equatable {
                 self.timeRemaining = self.timeRemainingAtStart + ellapsedTime
                 
                 if self.timeRemaining < 0.0 {
-                    print("\(self.player.description()) out of time on iOS10")
                     self.timeRemaining = 0.0
                     self.pause()
                     NotificationCenter.default.post(name:self.outOfTimeNotification, object: nil)
@@ -67,7 +66,6 @@ class PlayerTimer: Equatable {
         self.timeRemaining = timeRemainingAtStart + ellapsedTime
         
         if self.timeRemaining < 0.0 {
-            print("\(self.player.description()) out of time on iOS9")
             self.timeRemaining = 0.0
             self.pause()
             NotificationCenter.default.post(name:self.outOfTimeNotification, object: nil)

@@ -11,7 +11,6 @@ import UIKit
 @IBDesignable class ClockFaceView: UIView {
     var clockFace:ClockFace = ClockFace(center:CGPoint(),radius:0.0,angle:0.0) {
         didSet {
-            
             clockFace.faceColor = faceColor
             setNeedsDisplay()
         }
