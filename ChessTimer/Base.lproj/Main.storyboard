@@ -1,14 +1,172 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Z6h-ci-eGt">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Timer Table View Controller-->
+        <scene sceneID="eMX-Ac-9sD">
+            <objects>
+                <tableViewController id="bj6-Se-VkK" customClass="TimerTableViewController" customModule="ChessTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="149" sectionHeaderHeight="28" sectionFooterHeight="28" id="swn-HP-NxM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="gameCell" rowHeight="149" id="DwT-mA-ahg" customClass="GameCell" customModule="ChessTimer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="149"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DwT-mA-ahg" id="6s7-1A-fEJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="148.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6Wv-ul-Ebl">
+                                            <rect key="frame" x="77.5" y="24" width="220" height="100"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0e-T9-Rxl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="ZT1-IH-Cy8"/>
+                                                        <constraint firstAttribute="width" constant="100" id="nbP-uo-ZWu"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="51"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3RQ-yc-QjZ">
+                                                    <rect key="frame" x="120" y="0.0" width="100" height="100"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="AL6-WR-u69"/>
+                                                        <constraint firstAttribute="width" constant="100" id="nKZ-55-isN"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="51"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6Wv-ul-Ebl" firstAttribute="centerY" secondItem="6s7-1A-fEJ" secondAttribute="centerY" id="Fjy-eA-E4F"/>
+                                        <constraint firstItem="6Wv-ul-Ebl" firstAttribute="centerX" secondItem="6s7-1A-fEJ" secondAttribute="centerX" id="Sj2-bb-tl4"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="blackLabel" destination="3RQ-yc-QjZ" id="bgh-1l-c5l"/>
+                                    <outlet property="whiteLable" destination="R0e-T9-Rxl" id="aoW-DL-El9"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="clockVCSegue" id="Kvu-2O-8Sq"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bj6-Se-VkK" id="6fN-ft-SNZ"/>
+                            <outlet property="delegate" destination="bj6-Se-VkK" id="Owa-AL-vFb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="gnS-Us-KOh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="DyS-q2-uur">
+                            <connections>
+                                <segue destination="Wnb-58-S4E" kind="presentation" id="Swp-jC-XAH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZIW-JN-WiT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="311.19999999999999" y="60.719640179910051"/>
+        </scene>
+        <!--Timer Picker View Controller-->
+        <scene sceneID="Nhy-Kp-uKG">
+            <objects>
+                <viewController id="Wnb-58-S4E" customClass="TimerPickerViewController" customModule="ChessTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LKK-wi-uzE"/>
+                        <viewControllerLayoutGuide type="bottom" id="ijk-TN-bOQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tyl-Ax-HxQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="x8D-cr-Isp">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="White" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ob2-jp-K1u">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="usW-ny-x0H">
+                                        <rect key="frame" x="0.0" y="31.5" width="375" height="252"/>
+                                    </pickerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Black" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNv-MF-C42">
+                                        <rect key="frame" x="0.0" y="283.5" width="375" height="31.5"/>
+                                        <color key="backgroundColor" red="0.02" green="0.02" blue="0.02" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <color key="textColor" red="0.97999999999999998" green="0.97999999999999998" blue="0.97999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l95-H8-Vtb">
+                                        <rect key="frame" x="0.0" y="315" width="375" height="252"/>
+                                    </pickerView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OsX-ix-mJW">
+                                        <rect key="frame" x="0.0" y="567" width="375" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clp-ue-zsv">
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="80"/>
+                                                <state key="normal" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="cancel:" destination="Wnb-58-S4E" eventType="touchUpInside" id="BPY-tB-Nba"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ame-id-KH2">
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="aIp-5k-tsg"/>
+                                                </constraints>
+                                                <state key="normal" title="OK"/>
+                                                <connections>
+                                                    <action selector="Ok:" destination="Wnb-58-S4E" eventType="touchUpInside" id="4tk-7w-gMK"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="l95-H8-Vtb" firstAttribute="height" secondItem="usW-ny-x0H" secondAttribute="height" id="4ca-Sx-ZGn"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="x8D-cr-Isp" firstAttribute="top" secondItem="LKK-wi-uzE" secondAttribute="bottom" id="3UG-02-amx"/>
+                            <constraint firstItem="ijk-TN-bOQ" firstAttribute="top" secondItem="x8D-cr-Isp" secondAttribute="bottom" id="JAg-63-xSf"/>
+                            <constraint firstAttribute="trailing" secondItem="x8D-cr-Isp" secondAttribute="trailing" id="UWb-nf-oam"/>
+                            <constraint firstItem="x8D-cr-Isp" firstAttribute="leading" secondItem="tyl-Ax-HxQ" secondAttribute="leading" id="W3C-7T-zfp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="blackPicker" destination="l95-H8-Vtb" id="1Nc-zl-ZXw"/>
+                        <outlet property="whitePicker" destination="usW-ny-x0H" id="t4e-fJ-DPL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rQf-4g-a6B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="311" y="843"/>
+        </scene>
+        <!--Clock View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ClockViewController" customModule="ChessTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +174,238 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bmS-qL-5r9">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZu-4f-RRZ" userLabel="Black Background">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="323.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQF-zX-mTI" userLabel="White Background">
+                                        <rect key="frame" x="0.0" y="323.5" width="375" height="323.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Uy3-CQ-bWp">
+                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXE-Mp-aBd" customClass="PlayerTimerView" customModule="ChessTimer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="323.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vp8-PX-fRs" userLabel="Black Triangle Container">
+                                                <rect key="frame" x="121.5" y="0.0" width="100" height="50"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQr-hH-4jQ" customClass="TrianglePointerView" customModule="ChessTimer" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="Q43-5J-GyO"/>
+                                                            <constraint firstAttribute="height" constant="50" id="n8T-eZ-GcX"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="9LM-2d-vdu"/>
+                                                    <constraint firstAttribute="height" constant="50" id="Jis-z6-XcG"/>
+                                                    <constraint firstItem="nQr-hH-4jQ" firstAttribute="centerY" secondItem="Vp8-PX-fRs" secondAttribute="centerY" id="f8E-Mm-8Pr"/>
+                                                    <constraint firstItem="nQr-hH-4jQ" firstAttribute="centerX" secondItem="Vp8-PX-fRs" secondAttribute="centerX" id="haS-HQ-2Qr"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLr-Ef-UPb" customClass="ClockFaceView" customModule="ChessTimer" customModuleProvider="target">
+                                                <rect key="frame" x="80" y="70" width="183.5" height="183.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="pLr-Ef-UPb" secondAttribute="height" multiplier="1:1" id="IaG-z2-Ddt"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="faceColor">
+                                                        <color key="value" red="0.10000000000000001" green="0.10000000000000001" blue="0.10000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="M9m-Mg-ebd">
+                                                <rect key="frame" x="0.0" y="273.5" width="343" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soU-ez-2Nh">
+                                                        <rect key="frame" x="0.0" y="0.0" width="114.5" height="50"/>
+                                                        <state key="normal" title="Cancel"/>
+                                                        <connections>
+                                                            <action selector="cancel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S4I-I0-wLW"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHv-4P-oIG">
+                                                        <rect key="frame" x="114.5" y="0.0" width="114" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="MjJ-vn-NQo"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plU-uS-6mQ">
+                                                        <rect key="frame" x="228.5" y="0.0" width="114.5" height="50"/>
+                                                        <state key="normal" title="Pause"/>
+                                                        <connections>
+                                                            <action selector="pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iuq-qu-CJp"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="M9m-Mg-ebd" secondAttribute="trailing" id="Zhq-zP-KmH"/>
+                                            <constraint firstItem="M9m-Mg-ebd" firstAttribute="leading" secondItem="cXE-Mp-aBd" secondAttribute="leading" id="bZJ-tC-klv"/>
+                                            <constraint firstItem="M9m-Mg-ebd" firstAttribute="top" secondItem="pLr-Ef-UPb" secondAttribute="bottom" constant="20" id="vLZ-FU-1a0"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="bgp-ys-kDk" appends="YES" id="bQK-Qb-QVi"/>
+                                        </connections>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UUu-fZ-4SF" customClass="PlayerTimerView" customModule="ChessTimer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="323.5" width="343" height="323.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ekh-ph-K37" userLabel="White Triangle Container">
+                                                <rect key="frame" x="121.5" y="0.0" width="100" height="50"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pH9-Am-EhK" customClass="TrianglePointerView" customModule="ChessTimer" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="Jmg-dA-Chk"/>
+                                                            <constraint firstAttribute="height" constant="50" id="zBa-Hb-7bP"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="45g-hB-4RH"/>
+                                                    <constraint firstAttribute="height" constant="50" id="IgE-M5-pXD"/>
+                                                    <constraint firstItem="pH9-Am-EhK" firstAttribute="centerY" secondItem="Ekh-ph-K37" secondAttribute="centerY" id="isV-Bi-1ym"/>
+                                                    <constraint firstItem="pH9-Am-EhK" firstAttribute="centerX" secondItem="Ekh-ph-K37" secondAttribute="centerX" id="r1K-7h-kbD"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hN-KW-bhl" customClass="ClockFaceView" customModule="ChessTimer" customModuleProvider="target">
+                                                <rect key="frame" x="80" y="70" width="183.5" height="183.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="7hN-KW-bhl" secondAttribute="height" multiplier="1:1" id="HjY-xM-ats"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="faceColor">
+                                                        <color key="value" red="0.93000000000000005" green="0.93000000000000005" blue="0.93000000000000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0fd-Kj-WIo">
+                                                <rect key="frame" x="0.0" y="273.5" width="343" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhy-s5-JWk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="114.5" height="50"/>
+                                                        <state key="normal" title="Cancel"/>
+                                                        <connections>
+                                                            <action selector="cancel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L3G-Zz-1Jj"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuQ-HX-rwf">
+                                                        <rect key="frame" x="114.5" y="0.0" width="114" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="PAG-hD-Qyv"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ufu-70-Thk">
+                                                        <rect key="frame" x="228.5" y="0.0" width="114.5" height="50"/>
+                                                        <state key="normal" title="Pause"/>
+                                                        <connections>
+                                                            <action selector="pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FnQ-X2-hbc"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="0fd-Kj-WIo" firstAttribute="top" secondItem="7hN-KW-bhl" secondAttribute="bottom" constant="20" id="3id-5p-UBO"/>
+                                            <constraint firstAttribute="trailing" secondItem="0fd-Kj-WIo" secondAttribute="trailing" id="I2F-ZT-AXm"/>
+                                            <constraint firstItem="0fd-Kj-WIo" firstAttribute="leading" secondItem="UUu-fZ-4SF" secondAttribute="leading" id="Yc5-zm-Yob"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="rgn-9j-DIl" appends="YES" id="CKY-3R-SNo"/>
+                                        </connections>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bmS-qL-5r9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6VF-eJ-9yj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Uy3-CQ-bWp" secondAttribute="bottom" id="N5d-ih-JXM"/>
+                            <constraint firstItem="Uy3-CQ-bWp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="RQr-sk-MYb"/>
+                            <constraint firstItem="bmS-qL-5r9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Vpr-Ym-6uP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Uy3-CQ-bWp" secondAttribute="trailing" id="Z6b-5e-B4c"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bmS-qL-5r9" secondAttribute="bottom" id="ixd-pP-Qgu"/>
+                            <constraint firstItem="Uy3-CQ-bWp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ngC-kP-nmF"/>
+                            <constraint firstAttribute="trailing" secondItem="bmS-qL-5r9" secondAttribute="trailing" id="uad-9C-uaC"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blackClockFaceView" destination="pLr-Ef-UPb" id="GCz-Y5-Uj6"/>
+                        <outlet property="blackPlayerTimerView" destination="cXE-Mp-aBd" id="mfe-7L-dHE"/>
+                        <outlet property="blackPlayerTriangle" destination="nQr-hH-4jQ" id="nCY-v4-9Hw"/>
+                        <outlet property="blackTimeLable" destination="eHv-4P-oIG" id="cDU-t6-1qy"/>
+                        <outlet property="whiteClockFaceView" destination="7hN-KW-bhl" id="6nO-2c-bUY"/>
+                        <outlet property="whitePlayerTimerView" destination="UUu-fZ-4SF" id="Ugc-h8-MTy"/>
+                        <outlet property="whitePlayerTriangle" destination="pH9-Am-EhK" id="R6j-dN-v29"/>
+                        <outlet property="whiteTimeLable" destination="JuQ-HX-rwf" id="1fD-T3-TaH"/>
+                        <outletCollection property="puaseButtons" destination="plU-uS-6mQ" collectionClass="NSMutableArray" id="o56-WJ-tJ9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="rgn-9j-DIl" userLabel="White Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="clockTapped:" destination="BYZ-38-t0r" id="Zbe-a0-nGS"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="bgp-ys-kDk" userLabel="Black Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="clockTapped:" destination="BYZ-38-t0r" id="ReG-yV-TVa"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="1183.2" y="60.719640179910051"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RrT-Qb-MIx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z6h-ci-eGt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Onm-NW-4hg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bj6-Se-VkK" kind="relationship" relationship="rootViewController" id="kPG-Ua-HSz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UsI-lA-YYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-542" y="61"/>
         </scene>
     </scenes>
 </document>

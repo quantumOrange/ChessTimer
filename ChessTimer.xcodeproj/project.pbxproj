@@ -8,12 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		EDA1A8511E3A6970001F1CBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA1A8501E3A6970001F1CBC /* AppDelegate.swift */; };
-		EDA1A8531E3A6970001F1CBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA1A8521E3A6970001F1CBC /* ViewController.swift */; };
+		EDA1A8531E3A6970001F1CBC /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA1A8521E3A6970001F1CBC /* ClockViewController.swift */; };
 		EDA1A8561E3A6970001F1CBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDA1A8541E3A6970001F1CBC /* Main.storyboard */; };
 		EDA1A8581E3A6970001F1CBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDA1A8571E3A6970001F1CBC /* Assets.xcassets */; };
 		EDA1A85B1E3A6970001F1CBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDA1A8591E3A6970001F1CBC /* LaunchScreen.storyboard */; };
 		EDA1A8661E3A6971001F1CBC /* ChessTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA1A8651E3A6971001F1CBC /* ChessTimerTests.swift */; };
 		EDA1A8711E3A6971001F1CBC /* ChessTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA1A8701E3A6971001F1CBC /* ChessTimerUITests.swift */; };
+		EDA1A8821E3A71BC001F1CBC /* PlayerTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA1A8811E3A71BC001F1CBC /* PlayerTimerView.swift */; };
+		EDA1A8841E3A722D001F1CBC /* ClockFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA1A8831E3A722D001F1CBC /* ClockFaceView.swift */; };
+		EDA1A8861E3A7406001F1CBC /* PlayerTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA1A8851E3A7406001F1CBC /* PlayerTimer.swift */; };
+		EDA1A8881E3A741E001F1CBC /* GameTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA1A8871E3A741E001F1CBC /* GameTimer.swift */; };
+		EDA1A88A1E3A7955001F1CBC /* Drawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA1A8891E3A7955001F1CBC /* Drawable.swift */; };
+		EDA1A8921E3A8188001F1CBC /* ClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA1A8911E3A8188001F1CBC /* ClockFace.swift */; };
+		EDA1A8961E3B4E16001F1CBC /* TrianglePointerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA1A8951E3B4E16001F1CBC /* TrianglePointerView.swift */; };
+		EDA1A8981E3B5090001F1CBC /* CoreGraphics+Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA1A8971E3B5090001F1CBC /* CoreGraphics+Geometry.swift */; };
+		EDDE1DB61E45047200652D66 /* chime_bell_ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = EDDE1DB31E45047200652D66 /* chime_bell_ding.wav */; };
+		EDDE1DB71E45047200652D66 /* click_04.wav in Resources */ = {isa = PBXBuildFile; fileRef = EDDE1DB41E45047200652D66 /* click_04.wav */; };
+		EDDE1DB81E45047200652D66 /* digi_plink.wav in Resources */ = {isa = PBXBuildFile; fileRef = EDDE1DB51E45047200652D66 /* digi_plink.wav */; };
+		EDEF06E21E43CA1800A69FC4 /* TimerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEF06E11E43CA1800A69FC4 /* TimerTableViewController.swift */; };
+		EDEF06E41E4489EE00A69FC4 /* TimerPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEF06E31E4489EE00A69FC4 /* TimerPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +49,7 @@
 /* Begin PBXFileReference section */
 		EDA1A84D1E3A6970001F1CBC /* ChessTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChessTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDA1A8501E3A6970001F1CBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EDA1A8521E3A6970001F1CBC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EDA1A8521E3A6970001F1CBC /* ClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 		EDA1A8551E3A6970001F1CBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDA1A8571E3A6970001F1CBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDA1A85A1E3A6970001F1CBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +60,19 @@
 		EDA1A86C1E3A6971001F1CBC /* ChessTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChessTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDA1A8701E3A6971001F1CBC /* ChessTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessTimerUITests.swift; sourceTree = "<group>"; };
 		EDA1A8721E3A6971001F1CBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDA1A8811E3A71BC001F1CBC /* PlayerTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTimerView.swift; sourceTree = "<group>"; };
+		EDA1A8831E3A722D001F1CBC /* ClockFaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockFaceView.swift; sourceTree = "<group>"; };
+		EDA1A8851E3A7406001F1CBC /* PlayerTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTimer.swift; sourceTree = "<group>"; };
+		EDA1A8871E3A741E001F1CBC /* GameTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTimer.swift; sourceTree = "<group>"; };
+		EDA1A8891E3A7955001F1CBC /* Drawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
+		EDA1A8911E3A8188001F1CBC /* ClockFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockFace.swift; sourceTree = "<group>"; };
+		EDA1A8951E3B4E16001F1CBC /* TrianglePointerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrianglePointerView.swift; sourceTree = "<group>"; };
+		EDA1A8971E3B5090001F1CBC /* CoreGraphics+Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreGraphics+Geometry.swift"; sourceTree = "<group>"; };
+		EDDE1DB31E45047200652D66 /* chime_bell_ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = chime_bell_ding.wav; path = Sounds/chime_bell_ding.wav; sourceTree = "<group>"; };
+		EDDE1DB41E45047200652D66 /* click_04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = click_04.wav; path = Sounds/click_04.wav; sourceTree = "<group>"; };
+		EDDE1DB51E45047200652D66 /* digi_plink.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = digi_plink.wav; path = Sounds/digi_plink.wav; sourceTree = "<group>"; };
+		EDEF06E11E43CA1800A69FC4 /* TimerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerTableViewController.swift; sourceTree = "<group>"; };
+		EDEF06E31E4489EE00A69FC4 /* TimerPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +123,12 @@
 		EDA1A84F1E3A6970001F1CBC /* ChessTimer */ = {
 			isa = PBXGroup;
 			children = (
+				EDA1A87E1E3A69AE001F1CBC /* Model */,
 				EDA1A8501E3A6970001F1CBC /* AppDelegate.swift */,
-				EDA1A8521E3A6970001F1CBC /* ViewController.swift */,
+				EDA1A87F1E3A6EB3001F1CBC /* Views */,
+				EDA1A8801E3A6EC6001F1CBC /* Controllers */,
 				EDA1A8541E3A6970001F1CBC /* Main.storyboard */,
+				EDDE1DB91E45047E00652D66 /* Sounds */,
 				EDA1A8571E3A6970001F1CBC /* Assets.xcassets */,
 				EDA1A8591E3A6970001F1CBC /* LaunchScreen.storyboard */,
 				EDA1A85C1E3A6970001F1CBC /* Info.plist */,
@@ -123,6 +152,56 @@
 				EDA1A8721E3A6971001F1CBC /* Info.plist */,
 			);
 			path = ChessTimerUITests;
+			sourceTree = "<group>";
+		};
+		EDA1A87E1E3A69AE001F1CBC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EDA1A8851E3A7406001F1CBC /* PlayerTimer.swift */,
+				EDA1A8871E3A741E001F1CBC /* GameTimer.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EDA1A87F1E3A6EB3001F1CBC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EDA1A8991E3B59AC001F1CBC /* Drawing */,
+				EDA1A8811E3A71BC001F1CBC /* PlayerTimerView.swift */,
+				EDA1A8831E3A722D001F1CBC /* ClockFaceView.swift */,
+				EDA1A8951E3B4E16001F1CBC /* TrianglePointerView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		EDA1A8801E3A6EC6001F1CBC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EDA1A8521E3A6970001F1CBC /* ClockViewController.swift */,
+				EDEF06E11E43CA1800A69FC4 /* TimerTableViewController.swift */,
+				EDEF06E31E4489EE00A69FC4 /* TimerPickerViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		EDA1A8991E3B59AC001F1CBC /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				EDA1A8891E3A7955001F1CBC /* Drawable.swift */,
+				EDA1A8971E3B5090001F1CBC /* CoreGraphics+Geometry.swift */,
+				EDA1A8911E3A8188001F1CBC /* ClockFace.swift */,
+			);
+			name = Drawing;
+			sourceTree = "<group>";
+		};
+		EDDE1DB91E45047E00652D66 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				EDDE1DB31E45047200652D66 /* chime_bell_ding.wav */,
+				EDDE1DB41E45047200652D66 /* click_04.wav */,
+				EDDE1DB51E45047200652D66 /* digi_plink.wav */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +272,7 @@
 				TargetAttributes = {
 					EDA1A84C1E3A6970001F1CBC = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 84Y3R5UC5Q;
 						ProvisioningStyle = Automatic;
 					};
 					EDA1A8601E3A6971001F1CBC = {
@@ -232,9 +312,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDDE1DB61E45047200652D66 /* chime_bell_ding.wav in Resources */,
 				EDA1A85B1E3A6970001F1CBC /* LaunchScreen.storyboard in Resources */,
+				EDDE1DB81E45047200652D66 /* digi_plink.wav in Resources */,
 				EDA1A8581E3A6970001F1CBC /* Assets.xcassets in Resources */,
 				EDA1A8561E3A6970001F1CBC /* Main.storyboard in Resources */,
+				EDDE1DB71E45047200652D66 /* click_04.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +342,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDA1A8531E3A6970001F1CBC /* ViewController.swift in Sources */,
+				EDA1A8981E3B5090001F1CBC /* CoreGraphics+Geometry.swift in Sources */,
+				EDA1A8841E3A722D001F1CBC /* ClockFaceView.swift in Sources */,
+				EDA1A8531E3A6970001F1CBC /* ClockViewController.swift in Sources */,
+				EDA1A88A1E3A7955001F1CBC /* Drawable.swift in Sources */,
 				EDA1A8511E3A6970001F1CBC /* AppDelegate.swift in Sources */,
+				EDEF06E21E43CA1800A69FC4 /* TimerTableViewController.swift in Sources */,
+				EDA1A8861E3A7406001F1CBC /* PlayerTimer.swift in Sources */,
+				EDA1A8921E3A8188001F1CBC /* ClockFace.swift in Sources */,
+				EDEF06E41E4489EE00A69FC4 /* TimerPickerViewController.swift in Sources */,
+				EDA1A8821E3A71BC001F1CBC /* PlayerTimerView.swift in Sources */,
+				EDA1A8961E3B4E16001F1CBC /* TrianglePointerView.swift in Sources */,
+				EDA1A8881E3A741E001F1CBC /* GameTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +505,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 84Y3R5UC5Q;
 				INFOPLIST_FILE = ChessTimer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DavidCrooks.ChessTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -424,7 +519,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 84Y3R5UC5Q;
 				INFOPLIST_FILE = ChessTimer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DavidCrooks.ChessTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -505,6 +602,7 @@
 				EDA1A8771E3A6971001F1CBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDA1A8781E3A6971001F1CBC /* Build configuration list for PBXNativeTarget "ChessTimerTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +611,7 @@
 				EDA1A87A1E3A6971001F1CBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDA1A87B1E3A6971001F1CBC /* Build configuration list for PBXNativeTarget "ChessTimerUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +620,7 @@
 				EDA1A87D1E3A6971001F1CBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
