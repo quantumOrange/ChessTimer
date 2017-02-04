@@ -12,6 +12,29 @@ let minute:TimeInterval = 60.0
 struct Game {
     var white:Int
     var black:Int
+    
+    func dictionary() -> [String:Int] {
+        return ["whiteMin":self.white, "blackMin":self.black]
+    }
+    
+    init(dict:[String:Int]){
+        if let whiteMin = dict["whiteMin"],
+            let blackMin = dict["blackMin"] {
+            white = whiteMin
+            black = blackMin
+        }
+        else {
+            print("Error loading game dictionary")
+            white = 0
+            black = 0
+        }
+    }
+    
+    init(white:Int, black:Int){
+        self.white = white
+        self.black = black
+    }
+    
 }
 
 enum Player {

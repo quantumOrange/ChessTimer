@@ -22,22 +22,51 @@ class GameCell:UITableViewCell {
 class TimerTableViewController: UITableViewController {
     
     @IBAction func edit(_ sender: Any) {
-        
         //TODO:- Make table editable
-        
     }
     
-    var games:[Game] = [Game(white: 1,black: 1),Game(white: 3,black: 3), Game(white: 5,black: 5),Game(white: 10,black: 10),Game(white: 15,black: 15),Game(white: 20,black: 20)]
+    private var games:[Game] = [Game(white: 1,black: 1),Game(white: 3,black: 3), Game(white: 5,black: 5),Game(white: 10,black: 10),Game(white: 15,black: 15),Game(white: 20,black: 20)]
+    
+    func addGame(game:Game) {
+        games.append(game)
+        saveGames()
+    }
+    
+    
+    func saveGames() {
+        let gameDictionaryArray = games.map({$0.dictionary()})
+        UserDefaults.standard.set( gameDictionaryArray , forKey: "savedGames")
+    }
+    
+    func loadGames() {
+       if let  gameDictionaryArray = UserDefaults.standard.array(forKey: "savedGames") as? [[String : Int]]
+       {
+            games = gameDictionaryArray.map({Game(dict: $0)})
+        }
+       else {
+            print("Unable to load games. No games saved")
+        }
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadGames()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadGames()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        saveGames()
     }
 
     override func didReceiveMemoryWarning() {

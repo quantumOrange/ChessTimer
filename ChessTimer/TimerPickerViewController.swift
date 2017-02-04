@@ -14,7 +14,7 @@ class TimerPickerViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     var timerTableVC:TimerTableViewController?
     @IBAction func Ok(_ sender: Any) {
         if let ttvc = timerTableVC {
-            ttvc.games.append(game)
+            ttvc.addGame(game: game)
             ttvc.tableView.reloadData()
             dismiss(animated: true, completion: {
                ttvc.performSegue(withIdentifier:"clockVCSegue", sender:self.game)
