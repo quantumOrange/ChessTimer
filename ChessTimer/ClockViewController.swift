@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import CoreMotion
 
 class ClockViewController: UIViewController {
     var gameTimer = GameTimer()
@@ -137,11 +138,56 @@ class ClockViewController: UIViewController {
     }
     
     //MARK: - Lifecycle and Viewcontroller overrides
+    var currentAttitude:CMAttitude? { didSet {
+            if let attitude = currentAttitude {
+                if deviceIsHorizontalFaceup(attitude: attitude) {
+                    if blackPlayerTimerView.transform.isIdentity {
+                        UIView.animate(withDuration: 0.3, animations: {
+                            self.blackPlayerTimerView.transform = CGAffineTransform.init(rotationAngle: CGFloat(M_PI))
+                        })
+                    }
+                }
+                else {
+                    if !blackPlayerTimerView.transform.isIdentity {
+                        UIView.animate(withDuration: 0.3, animations: {
+                            self.blackPlayerTimerView.transform = CGAffineTransform.identity
+                        })
+                    }
+                }
+            }
+        }
+    }
     
+    
+    func deviceIsHorizontalFaceup(attitude:CMAttitude) -> Bool {
+        let R = attitude.rotationMatrix
+        //the vector (-R.m31,-R.m32,-R.m33) is gravity vector is device referance frame.
+        let tolerance = 0.01
+        return R.m33 > 1.0 - tolerance
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(ClockViewController.updateClockViews), name: clockStateChangedNotification, object:nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ClockViewController.gameOverAlert), name: gameOverNotification, object:nil)
+        
+        //CMMotionManager *mManager = [(APLAppDelegate *)[[UIApplication sharedApplication] delegate] sharedManager];
+        let manager = CMMotionManager()
+        
+        
+        if manager.isDeviceMotionAvailable {
+            manager.deviceMotionUpdateInterval = 0.05
+            
+            manager.startDeviceMotionUpdates(to: OperationQueue.main, withHandler: {deviceManager, error in
+                self.currentAttitude = manager.deviceMotion?.attitude
+                })
+            
+            /*
+            manager.startDeviceMotionUpdates(to:OperationQueue.main) {
+                [weak self] (data: CMDeviceMotion?, error: Error?) in {
+                    currentAttitude = self.motionManager.deviceMotion.attitude
+                }
+            */
+        }
         
     }
     
@@ -149,7 +195,7 @@ class ClockViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        blackPlayerTimerView.transform = CGAffineTransform.init(rotationAngle: CGFloat(M_PI))
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
