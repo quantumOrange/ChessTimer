@@ -23,23 +23,33 @@ class ClockViewController: UIViewController {
     @IBOutlet weak var blackTimeLable: UILabel!
     @IBOutlet weak var blackPlayerTriangle: TrianglePointerView!
     
+    @IBOutlet var whiteTapGesture: UITapGestureRecognizer!
+    
+    @IBOutlet var blackTapGesture: UITapGestureRecognizer!
+    
     @IBAction func pause(_ sender: Any) {
+      
+        
+        
         if gameTimer.isPaused {
-            puaseButtons.forEach({$0.titleLabel?.text = "Pause"})
+            
+            pauseStartButtons.forEach({$0.setTitle("Pause" , for:.normal)  })
             gameTimer.unpause()
         }
         else {
-            puaseButtons.forEach({$0.titleLabel?.text = "Start"})
+            
             if gameTimer.activePlayer == .none {
                 //game hasn't started - start!
+                start()
             }
             else {
                 //Game is on - pause!
                 gameTimer.pause()
+                pauseStartButtons.forEach({$0.setTitle("Start" , for:.normal)  })
+             //   button1.titleLabel?.text = "Start"
+              //  button2.titleLabel?.text = "Start"
             }
-            
         }
-        
     }
    
     @IBAction func cancel(_ sender: Any) {
@@ -47,7 +57,7 @@ class ClockViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBOutlet var puaseButtons: [UIButton]!
+    @IBOutlet var pauseStartButtons: [UIButton]!
 
     @IBAction func clockTapped(_ sender: UITapGestureRecognizer) {
         if sender.state == .recognized {
@@ -59,13 +69,28 @@ class ClockViewController: UIViewController {
             }
             else {
                 gameTimer.switchPlayers()
+                
             }
+            updateGestures()
             updateTriangles(animated: true)
         }
     }
     
+    func updateGestures() {
+        if gameTimer.activePlayer != .none {
+            blackTapGesture.isEnabled = gameTimer.blackIsActive
+            whiteTapGesture.isEnabled = gameTimer.whiteIsActive
+        }
+        else {
+            blackTapGesture.isEnabled = true
+            whiteTapGesture.isEnabled = true
+        }
+    }
+    
+    
     func start() {
-        puaseButtons.forEach({$0.titleLabel?.text = "Pause"})
+        pauseStartButtons.forEach({$0.setTitle("Pause" , for:.normal)  })
+       
         startClockAnimation()
     }
     
@@ -161,7 +186,8 @@ class ClockViewController: UIViewController {
     
     func deviceIsHorizontalFaceup(attitude:CMAttitude) -> Bool {
         let R = attitude.rotationMatrix
-        //the vector (-R.m31,-R.m32,-R.m33) is gravity vector is device referance frame.
+        //the vector (-R.m31,-R.m32,-R.m33) is gravity vector in device referance frame, 
+        //with the z component normal to the screen
         let tolerance = 0.01
         return R.m33 > 1.0 - tolerance
     }

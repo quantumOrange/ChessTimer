@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="149"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DwT-mA-ahg" id="6s7-1A-fEJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="148.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6Wv-ul-Ebl">
@@ -253,7 +253,7 @@
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plU-uS-6mQ">
                                                         <rect key="frame" x="228.5" y="0.0" width="114.5" height="50"/>
-                                                        <state key="normal" title="Pause"/>
+                                                        <state key="normal" title="Start"/>
                                                         <connections>
                                                             <action selector="pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iuq-qu-CJp"/>
                                                         </connections>
@@ -329,7 +329,7 @@
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ufu-70-Thk">
                                                         <rect key="frame" x="228.5" y="0.0" width="114.5" height="50"/>
-                                                        <state key="normal" title="Pause"/>
+                                                        <state key="normal" title="Start"/>
                                                         <connections>
                                                             <action selector="pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FnQ-X2-hbc"/>
                                                         </connections>
@@ -367,12 +367,15 @@
                         <outlet property="blackClockFaceView" destination="pLr-Ef-UPb" id="GCz-Y5-Uj6"/>
                         <outlet property="blackPlayerTimerView" destination="cXE-Mp-aBd" id="mfe-7L-dHE"/>
                         <outlet property="blackPlayerTriangle" destination="nQr-hH-4jQ" id="nCY-v4-9Hw"/>
+                        <outlet property="blackTapGesture" destination="bgp-ys-kDk" id="I8J-7J-ieG"/>
                         <outlet property="blackTimeLable" destination="eHv-4P-oIG" id="cDU-t6-1qy"/>
                         <outlet property="whiteClockFaceView" destination="7hN-KW-bhl" id="6nO-2c-bUY"/>
                         <outlet property="whitePlayerTimerView" destination="UUu-fZ-4SF" id="Ugc-h8-MTy"/>
                         <outlet property="whitePlayerTriangle" destination="pH9-Am-EhK" id="R6j-dN-v29"/>
+                        <outlet property="whiteTapGesture" destination="rgn-9j-DIl" id="0BG-8W-jhh"/>
                         <outlet property="whiteTimeLable" destination="JuQ-HX-rwf" id="1fD-T3-TaH"/>
-                        <outletCollection property="puaseButtons" destination="plU-uS-6mQ" collectionClass="NSMutableArray" id="o56-WJ-tJ9"/>
+                        <outletCollection property="pauseStartButtons" destination="Ufu-70-Thk" collectionClass="NSMutableArray" id="NjL-Na-PL7"/>
+                        <outletCollection property="pauseStartButtons" destination="plU-uS-6mQ" collectionClass="NSMutableArray" id="B7g-aL-ddV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
