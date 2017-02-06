@@ -95,6 +95,9 @@ class TimerTableViewController: UITableViewController {
             
             cell.blackLabel.text = String(game.black)
             cell.whiteLable.text = String(game.white)
+            
+            let hue:CGFloat = 240.0/360.0
+            cell.backgroundColor = UIColor(hue: hue, saturation: 0.05, brightness: 0.97, alpha: 1.0)
         }
         // Configure the cell...
 
