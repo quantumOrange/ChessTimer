@@ -220,7 +220,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLr-Ef-UPb" customClass="ClockFaceView" customModule="ChessTimer" customModuleProvider="target">
-                                                <rect key="frame" x="80" y="70" width="183.5" height="183.5"/>
+                                                <rect key="frame" x="87.5" y="70" width="168.5" height="168.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -232,33 +232,36 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="M9m-Mg-ebd">
-                                                <rect key="frame" x="0.0" y="273.5" width="343" height="50"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9m-Mg-ebd">
+                                                <rect key="frame" x="0.0" y="258.5" width="343" height="65"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soU-ez-2Nh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="114.5" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="65"/>
                                                         <state key="normal" title="Cancel"/>
                                                         <connections>
                                                             <action selector="cancel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S4I-I0-wLW"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHv-4P-oIG">
-                                                        <rect key="frame" x="114.5" y="0.0" width="114" height="50"/>
+                                                        <rect key="frame" x="93.5" y="0.0" width="157" height="65"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="MjJ-vn-NQo"/>
+                                                            <constraint firstAttribute="height" constant="65" id="MjJ-vn-NQo"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="58"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plU-uS-6mQ">
-                                                        <rect key="frame" x="228.5" y="0.0" width="114.5" height="50"/>
+                                                        <rect key="frame" x="250.5" y="0.0" width="92.5" height="65"/>
                                                         <state key="normal" title="Start"/>
                                                         <connections>
                                                             <action selector="pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iuq-qu-CJp"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="plU-uS-6mQ" firstAttribute="width" secondItem="soU-ez-2Nh" secondAttribute="width" id="Gk5-1r-mrq"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -296,7 +299,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hN-KW-bhl" customClass="ClockFaceView" customModule="ChessTimer" customModuleProvider="target">
-                                                <rect key="frame" x="80" y="70" width="183.5" height="183.5"/>
+                                                <rect key="frame" x="87.5" y="70" width="168.5" height="168.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -308,33 +311,36 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0fd-Kj-WIo">
-                                                <rect key="frame" x="0.0" y="273.5" width="343" height="50"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0fd-Kj-WIo">
+                                                <rect key="frame" x="0.0" y="258.5" width="343" height="65"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhy-s5-JWk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="114.5" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="65"/>
                                                         <state key="normal" title="Cancel"/>
                                                         <connections>
                                                             <action selector="cancel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L3G-Zz-1Jj"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuQ-HX-rwf">
-                                                        <rect key="frame" x="114.5" y="0.0" width="114" height="50"/>
+                                                        <rect key="frame" x="93" y="0.0" width="157" height="65"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="PAG-hD-Qyv"/>
+                                                            <constraint firstAttribute="height" constant="65" id="PAG-hD-Qyv"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="58"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ufu-70-Thk">
-                                                        <rect key="frame" x="228.5" y="0.0" width="114.5" height="50"/>
+                                                        <rect key="frame" x="250" y="0.0" width="93" height="65"/>
                                                         <state key="normal" title="Start"/>
                                                         <connections>
                                                             <action selector="pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FnQ-X2-hbc"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Ufu-70-Thk" firstAttribute="width" secondItem="Bhy-s5-JWk" secondAttribute="width" id="3i5-n6-0Sk"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

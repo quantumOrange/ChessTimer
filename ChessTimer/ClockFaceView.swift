@@ -27,8 +27,8 @@ import UIKit
 
     override func draw(_ rect: CGRect) {
         let hue:CGFloat = 240.0/360.0
-        let brightness:CGFloat = 0.9
-    clockFace.timeColor = isActive ? UIColor(hue: hue, saturation: 0.5, brightness: brightness, alpha: 1.0) : UIColor(hue: hue, saturation: 0.25, brightness: brightness, alpha: 1.0)
+        
+    clockFace.timeColor = isActive ? UIColor(hue: hue, saturation: 0.5, brightness: 0.95, alpha: 1.0) : UIColor(hue: hue, saturation: 0.125, brightness: 0.5, alpha: 1.0)
         
         if let context = UIGraphicsGetCurrentContext() {
             clockFace.draw(renderer: context)
