@@ -100,6 +100,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B505C69A963BC7B39989E3AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D6D97A164395B80E9A07BA04 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EDA1A8441E3A6970001F1CBC = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +121,8 @@
 				EDA1A8641E3A6971001F1CBC /* ChessTimerTests */,
 				EDA1A86F1E3A6971001F1CBC /* ChessTimerUITests */,
 				EDA1A84E1E3A6970001F1CBC /* Products */,
+				D6D97A164395B80E9A07BA04 /* Pods */,
+				B505C69A963BC7B39989E3AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -228,9 +244,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDA1A8781E3A6971001F1CBC /* Build configuration list for PBXNativeTarget "ChessTimerTests" */;
 			buildPhases = (
+				2F896E1C89CEAA36A0F13F9D /* [CP] Check Pods Manifest.lock */,
 				EDA1A85D1E3A6971001F1CBC /* Sources */,
 				EDA1A85E1E3A6971001F1CBC /* Frameworks */,
 				EDA1A85F1E3A6971001F1CBC /* Resources */,
+				CB27457A1F8B063F0A3917B0 /* [CP] Embed Pods Frameworks */,
+				F13107B6E1A2A70A06C4D5F3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,9 +265,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDA1A87B1E3A6971001F1CBC /* Build configuration list for PBXNativeTarget "ChessTimerUITests" */;
 			buildPhases = (
+				A797262C57EB75BDEC609AB5 /* [CP] Check Pods Manifest.lock */,
 				EDA1A8681E3A6971001F1CBC /* Sources */,
 				EDA1A8691E3A6971001F1CBC /* Frameworks */,
 				EDA1A86A1E3A6971001F1CBC /* Resources */,
+				95F7802A46F825B89F48726C /* [CP] Embed Pods Frameworks */,
+				14AB9099BE74096E51693FBF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -336,6 +358,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		14AB9099BE74096E51693FBF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChessTimerUITests/Pods-ChessTimerUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2F896E1C89CEAA36A0F13F9D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		95F7802A46F825B89F48726C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChessTimerUITests/Pods-ChessTimerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A797262C57EB75BDEC609AB5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CB27457A1F8B063F0A3917B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChessTimerTests/Pods-ChessTimerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F13107B6E1A2A70A06C4D5F3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChessTimerTests/Pods-ChessTimerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EDA1A8491E3A6970001F1CBC /* Sources */ = {
@@ -506,6 +621,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 84Y3R5UC5Q;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Armchair",
+				);
 				INFOPLIST_FILE = ChessTimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -520,6 +639,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 84Y3R5UC5Q;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Armchair",
+				);
 				INFOPLIST_FILE = ChessTimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
